@@ -16,6 +16,7 @@ class Clientes extends Controller
         if (empty($_SESSION['correoCliente'])) {
             header('Location: ' . BASE_URL);
         }
+        $data['perfil'] = 'si';
         $data['title'] = 'Tu Perfil';
         $data['verificar'] = $this->model->getVerificar($_SESSION['correoCliente']);
         $this->views->getView('principal', "perfil", $data);
@@ -126,5 +127,68 @@ class Clientes extends Controller
         }
 
     }
+    //registrar Pedido
+    public function registrarPedido()
+    {
+        $datos = file_get_contents('php://input');
+        $json = json_decode($datos, true);
+        $pedidos = $json['pedidos'];
+        $productos = $json['productos'];
+        
+        if (is_array($pedidos) && is_array($productos)) {
+            $id_transaccion = $pedidos['id'];
+            $monto = $pedidos['purchase_units'][0]['amount']['value'];
+            $estado = $pedidos['status'];
+            $fecha = date('Y-m-d H:i:s');
+            $email = $pedidos['payer']['email_address'];
+            $nombre = $pedidos['payer']['name']['given_name'];
+            $apellido = $pedidos['payer']['name']['surname'];
+            $direccion = $pedidos['purchase_units'][0]['shipping']['address']['address_line_1'];
+            $ciudad = $pedidos['purchase_units'][0]['shipping']['address']['admin_area_2'];
+            $email_user = $_SESSION['correoCliente'];
+            
 
+            $data = $this->model->registrarPedido($id_transaccion, $monto, $estado, $fecha, $email,
+            $nombre, $apellido, $direccion, $ciudad, $email_user);
+            if ($data > 0) {
+                foreach ($productos as $producto) {
+                    $temp = $this->model->getProducto($producto['idProducto']);
+                    $this->model->registrarDetalle($temp['nombre'], $temp['precio'], $producto['cantidad'], $data);
+                }
+                $mensaje = array('msg' => 'pedido registrado', 'icono' => 'success');
+            } else {
+                $mensaje = array('msg' => 'error a registrar el pedido', 'icono' => 'error');
+            }
+            
+        }else{
+            $mensaje = array('msg' => 'error fatal con los datos', 'icono' => 'error');
+        }
+        echo json_encode($mensaje);
+        die();
+    }
+    //listar productos pendientes
+    public function listarPendientes()
+    {
+        $data = $this->model->getPedidos(1);
+        for ($i=0; $i < count($data); $i++) { 
+            $data[$i]['accion']= '<div class="text-center"><button class="btn btn-primary" type="button" onclick="verPedido('.$data[$i]['id'].')"><i class="fas fa-eye"></i></button></div>';
+        }
+        echo json_encode($data);
+        die();
+    }
+
+    public function verPedido($idPedido)
+    {
+        $data ['productos']= $this->model->verPedido($idPedido);
+        $data['moneda'] = MONEDA;
+        echo json_encode($data);
+        die();
+    }
+
+    public function salir()
+    {
+        session_destroy();
+        header('Location: ' . BASE_URL);
+    }
+    
 }

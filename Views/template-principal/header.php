@@ -8,10 +8,12 @@
 
     <link rel="apple-touch-icon" href="<?php echo BASE_URL . 'assets/img/apple-icon.png'; ?>">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL . 'assets/img/favicon.ico'; ?>">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'assets/css/bootstrap.min.css'; ?>">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'assets/css/templatemo.css'; ?>">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'assets/css/custom.css'; ?>">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
@@ -28,7 +30,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'assets/css/slick-theme.css'; ?>">
 
     <link rel="stylesheet" href="<?php echo BASE_URL . 'assets/css/fontawesome.min.css'; ?>">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+            src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&buyer-country=US&currency=<?php echo MONEDA;?>&components=buttons&enable-funding=venmo"
+            data-sdk-integration-source="developer-studio"
+        ></script>
     <!--
+
+
     
 TemplateMo 559 Zay Shop
 
@@ -110,19 +119,17 @@ https://templatemo.com/tm-559-zay-shop
                         data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#" id="verCarrito">
-                        <i class="fas fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
-                            id="btnCantidadCarrito">0</span>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none"
-                        href="<?php echo BASE_URL . 'principal/deseo' ?>">
-                        <i class="fas fa-fw fa-heart text-dark mr-1"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
-                            id="btnCantidadDeseo">0</span>
-                    </a>
+                    <?php if ($data['perfil'] == 'no') { ?>
+    <a class="nav-icon position-relative text-decoration-none" href="#" id="verCarrito">
+        <i class="fas fa-fw fa-cart-arrow-down text-dark me-1"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark" id="btnCantidadCarrito">0</span>
+    </a>
+    <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/deseo'; ?>">
+        <i class="fas fa-fw fa-heart text-dark me-1"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark" id="btnCantidadDeseo">0</span>
+    </a>
+<?php } ?>
+
                     <?php if (!empty($_SESSION['correoCliente'])) { ?>
                         <a class="nav-icon position-relative text-decoration-none"
                             href="<?php echo BASE_URL . 'clientes' ?>">
