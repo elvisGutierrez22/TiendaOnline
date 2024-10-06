@@ -55,7 +55,7 @@ class Clientes extends Controller
     public function enviarCorreo()
     {
         if (isset($_POST['correo']) && isset($_POST['token'])) {
-            $mail = new PHPMailer(true);
+            $mail = new PHPMailer (true);
 
             try {
                 //Server settings
@@ -69,7 +69,7 @@ class Clientes extends Controller
                 $mail->Port = PUERTO_SMTP;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                 //Recipients
-                $mail->setFrom('carlos.rivas1@catolica.edu.sv', TITLE);
+                $mail->setFrom('francis1522v@gmail.com', TITLE);
                 $mail->addAddress($_POST['correo']);
 
                 //Content

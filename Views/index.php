@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header.php'; ?>
+<?php include_once 'Views/template/header-principal.php'; ?>
 
 
 
@@ -173,7 +173,7 @@
     </section>
     <!-- End Featured Product -->
 
-<?php include_once 'Views/template-principal/footer.php'; ?>
+<?php include_once 'Views/template/footer-principal.php'; ?>
 
 </body>
 
