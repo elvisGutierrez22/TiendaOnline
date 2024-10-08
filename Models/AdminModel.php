@@ -13,4 +13,3 @@ class AdminModel extends Query{
    
 }
  
-?>

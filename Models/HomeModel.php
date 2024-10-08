@@ -18,4 +18,3 @@ class HomeModel extends Query{
 
 }
  
-?>

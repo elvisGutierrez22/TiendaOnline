@@ -59,7 +59,19 @@
 				<li>
 					<a href="<?php echo BASE_URL . 'usuarios'; ?>">
 						
-						<div class="menu-title"><i class='fas fa-users'></i>Usuarios</div>
+						<div class="menu-title"><i class='fas fa-users'></i> Usuarios</div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo BASE_URL . 'categorias'; ?>">
+						
+						<div class="menu-title"><i class='fas fa-tags'></i> Categorias</div>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo BASE_URL . 'productos'; ?>">
+						
+						<div class="menu-title"><i class='fas fa-list'></i> Productos</div>
 					</a>
 				</li>
 			</ul>
