@@ -10,7 +10,7 @@ class Principal extends Controller
     {
         $data['perfil'] = 'no';
         $data['title'] = 'Sobre Nosotros';
-        $this->views->getView('Principal', "about", $data);
+        $this->views->getView('principal', "about", $data);
     }
     //vista 'Tienda'
     public function shop($page)
@@ -24,7 +24,7 @@ class Principal extends Controller
         $data['pagina'] = $pagina;
         $total = $this ->model->getTotalProductos();
         $data['total'] = ceil($total['total'] / $porPagina);
-        $this->views->getView('Principal', "shop", $data);
+        $this->views->getView('principal', "shop", $data);
     }
     //vista 'Detalles'
     public function detail($id_producto)
@@ -34,7 +34,7 @@ class Principal extends Controller
         $id_categoria = $data['producto']['id_categoria'];
         $data['relacionados'] = $this->model->getAleatorios($id_categoria, $data['producto']['id']);
         $data['title'] = $data['producto']['nombre'];
-        $this->views->getView('Principal', "detail", $data);
+        $this->views->getView('principal', "detail", $data);
     }
     //vista 'Categorias'
     public function categorias($datos)
@@ -64,21 +64,21 @@ class Principal extends Controller
         $data['productos'] = $this->model->getProductosCat($id_categoria, $desde, $porPagina);
         $data['title'] = 'Categorias';
         $data['id_categoria'] =  $id_categoria;
-        $this->views->getView('Principal', "categorias", $data);
+        $this->views->getView('principal', "categorias", $data);
     }
     //vista 'Contacto'
     public function contact()
     {
         $data['perfil'] = 'no';
         $data['title'] = 'Contactos';
-        $this->views->getView('Principal', "contact", $data);
+        $this->views->getView('principal', "contact", $data);
     }
     //vista 'Deseo'
     public function deseo()
     {
         $data['perfil'] = 'no';
         $data['title'] = 'Tu Lista de deseos';
-        $this->views->getView('Principal', "deseo", $data);
+        $this->views->getView('principal', "deseo", $data);
     }
 
     //Obtener productos apartir de la lista de carrito
