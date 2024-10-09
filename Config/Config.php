@@ -1,5 +1,5 @@
 <?php
-const BASE_URL = "https://tiendare-448695688435.us-central1.run.app/";
+const BASE_URL = "https://tiendaonline-448695688435.us-central1.run.app/";
 const HOST = "34.71.146.244";
 const USER = "root";
 const PASS = "administracion2024";
