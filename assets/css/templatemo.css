@@ -130,9 +130,15 @@ body, ul, li, p, a, label, input, div {
   color: #000 !important;
 }
 /* Services */
-.services-icon-wap {transition: .3s;}
-.services-icon-wap:hover, .services-icon-wap:hover i {color: #fff;}
-.services-icon-wap:hover {background: #69bb7e;}
+.services-icon-wap {
+  transition: background-color .3s, color .3s; /* Especificamos las propiedades que cambiarán en la transición */
+  background-color: #69bb7e; /* Este es el color que querías aplicar */
+}
+
+.services-icon-wap:hover, .services-icon-wap:hover i {
+  color: #fff; /* Cambiamos el color del ícono o del texto al pasar el cursor */
+}
+
 /* Contact map */
 .leaflet-control a, .leaflet-control { font-size: 10px !important;}
 .form-control { border: 1px solid #e8e8e8;}

@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header.php';
+<?php include_once 'Views/template/header-principal.php';
 ?>
 
 <!-- Start Content -->
@@ -144,7 +144,7 @@
 <!--End Brands-->
 
 
-<?php include_once 'Views/template-principal/footer.php' ?>
+<?php include_once 'Views/template/footer-principal.php' ?>
 
 <script src = "<?php echo BASE_URL . 'assets/js/modulos/listaDeseo.js'; ?>"></script>
 </body>

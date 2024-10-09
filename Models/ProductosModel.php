@@ -25,21 +25,21 @@ class ProductosModel extends Query{
     }
    
 
-    public function eliminar($idUser){
-        $sql = "UPDATE categorias SET estado = ? WHERE id = ?";
-        $array = array(0, $idUser);
+    public function eliminar($idPro){
+        $sql = "UPDATE productos SET estado = ? WHERE id = ?";
+        $array = array(0, $idPro);
         return $this->save($sql, $array);
     }
 
-    public function getCatoria($idCat)
+    public function getProducto($idPro)
     {
-        $sql = "SELECT * FROM categorias WHERE id = $idCat";
+        $sql = "SELECT * FROM productos WHERE id = $idPro";
         return $this->select($sql);
     }
 
-    public function modificar($nombre, $apellido, $correo, $id){
-        $sql = "UPDATE usuarios SET nombres=?, apellidos=?, correo=? WHERE id=?";
-        $array = array($nombre, $apellido, $correo, $id);
+    public function modificar($nombre, $descripcion, $precio, $cantidad, $destino, $categoria, $id){
+        $sql = "UPDATE productos SET nombre=?, descripcion=?, precio=?, cantidad=?, imagen=?, id_categoria=? WHERE id=?";
+        $array = array($$nombre, $descripcion, $precio, $cantidad, $destino, $categoria, $id);
         return $this->save($sql, $array);
     }
     public function modificarConClave($categoria, $imagen, $id)

@@ -37,7 +37,7 @@
     </div>
     <div class="tab-pane fade" id="nuevoProducto" role="tabpanel" aria-labelledby="profile-tab">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body p-5">
                 <form id="frmRegistro">
                     <div class="row">
                         <input type="hidden" id="id" name="id">
@@ -90,7 +90,7 @@
                         <div class="col-md-3">
                         <div class="form-group">
                             <label for="imagen">Imagen (Opcional)</label>
-                            <input type="file" class="form-control-file" name="imagen" id="imagen">
+                            <input type="file" class="form-control" name="imagen" id="imagen">
                         </div>
 
                         </div>
@@ -98,8 +98,6 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
-                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancelar</button>
-
 
                     </div>
                 </form>

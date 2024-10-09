@@ -169,8 +169,8 @@
 	<script src="<?php echo BASE_URL;?>assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="<?php echo BASE_URL;?>assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
 	<script src="<?php echo BASE_URL;?>assets/plugins/chartjs/js/chart.js"></script>
-	<!--a<script src="<?php echo BASE_URL;?>assets/js/index.js"></script>
-	app JS-->
+	<script src="<?php echo BASE_URL;?>assets/js/index.js"></script>
+	<!--app JS-->
 	<script src="<?php echo BASE_URL;?>assets/js/app.js"></script>
 
 	<script src="<?php echo BASE_URL; ?>assets/js/all.min.js"></script>

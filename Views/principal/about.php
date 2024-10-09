@@ -1,18 +1,16 @@
-<?php include_once 'Views/template-principal/header.php'; ?>
+<?php include_once 'Views/template/header-principal.php'; ?>
 
     <section class="bg-success py-5">
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
-                    <h1>About Us</h1>
+                    <h1>Sobre Nosotros</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Tu tienda en línea especializada en ofrecer lo último en tecnología. Desde dispositivos de vanguardia hasta los accesorios más innovadores, nuestra misión es llevar la tecnología más avanzada directamente a tus manos.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo BASE_URL; ?>assets/img/about-hero.svg" alt="About Hero">
+                    <img src="<?php echo BASE_URL; ?>assets_tmp/img/1.jpg" alt="About Hero">
                 </div>
             </div>
         </div>
@@ -23,10 +21,9 @@
     <section class="container py-5">
         <div class="row text-center pt-5 pb-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Our Services</h1>
+                <h1 class="h1">Nuestros Servicios</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    Lorem ipsum dolor sit amet.
+                Tecnología de Vanguardia: Mantenemos nuestro catálogo actualizado con las últimas tendencias tecnológicas, desde smartphones, laptops, tablets, hasta equipos de gaming y componentes de hardware.
                 </p>
             </div>
         </div>
@@ -35,28 +32,28 @@
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
-                    <h2 class="h5 mt-4 text-center">Delivery Services</h2>
+                    <h2 class="h5 mt-4 text-center">Servicios de entrega</h2>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
-                    <h2 class="h5 mt-4 text-center">Shipping & Return</h2>
+                    <h2 class="h5 mt-4 text-center">Envio y devoluciones</h2>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
-                    <h2 class="h5 mt-4 text-center">Promotion</h2>
+                    <h2 class="h5 mt-4 text-center">Promociones</h2>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fa fa-user"></i></div>
-                    <h2 class="h5 mt-4 text-center">24 Hours Service</h2>
+                    <h2 class="h5 mt-4 text-center">Servicio las 24 Horas</h2>
                 </div>
             </div>
         </div>
@@ -68,10 +65,9 @@
         <div class="container my-4">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Our Brands</h1>
+                    <h1 class="h1">Nuestras Marcas</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        Lorem ipsum dolor sit amet.
+                        Contamos con las marcas de vanguardia
                     </p>
                 </div>
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
@@ -94,57 +90,27 @@
                                     <div class="carousel-item active">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_01.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/images/marcas/brand_01.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_02.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/images/marcas/brand_02.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_03.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/images/marcas/brand_03.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_04.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/images/marcas/brand_04.png" alt="Brand Logo"></a>
                                             </div>
                                         </div>
                                     </div>
                                     <!--End First slide-->
 
                                     <!--Second slide-->
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_01.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_02.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_03.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_04.png" alt="Brand Logo"></a>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <!--End Second slide-->
 
                                     <!--Third slide-->
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_01.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_02.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_03.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="<?php echo BASE_URL; ?>assets/img/brand_04.png" alt="Brand Logo"></a>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <!--End Third slide-->
 
                                 </div>
@@ -167,7 +133,7 @@
     </section>
     <!--End Brands-->
 
-<?php include_once 'Views/template-principal/footer.php'; ?>
+<?php include_once 'Views/template/footer-principal.php'; ?>
 
 </body>
 

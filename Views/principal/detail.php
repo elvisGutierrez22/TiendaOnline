@@ -1,11 +1,11 @@
-<?php include_once 'Views/template-principal/header.php' ?>
+<?php include_once 'Views/template/header-principal.php' ?>
     <!-- Open Content -->
     <section class="bg-light">
         <div class="container pb-5">
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="<?php echo $data['producto']['imagen']; ?>" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" src="<?php echo BASE_URL . $data['producto']['imagen']; ?>" alt="Card image cap" id="product-detail">
                     </div>
                 </div>
                 <!-- col end -->
@@ -14,14 +14,6 @@
                         <div class="card-body">
                             <h1 class="h2"><?php echo $data['producto']['nombre'] ?></h1>
                             <p class="h3 py-2"><?php echo MONEDA . ' ' . $data['producto']['precio'] ?></p>
-                            <p class="py-2">
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-secondary"></i>
-                                <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
-                            </p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <h6>Categoria:</h6>
@@ -34,39 +26,12 @@
                             <h6>Descripción:</h6>
                             <p><?php echo $data['producto']['descripcion'] ?></p>
                             <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <h6>Avaliable Color :</h6>
-                                </li>
-                                <li class="list-inline-item">
-                                    <p class="text-muted"><strong>White / Black</strong></p>
-                                </li>
                             </ul>
 
-                            <h6>Specification:</h6>
-                            <ul class="list-unstyled pb-3">
-                                <li>Lorem ipsum dolor sit</li>
-                                <li>Amet, consectetur</li>
-                                <li>Adipiscing elit,set</li>
-                                <li>Duis aute irure</li>
-                                <li>Ut enim ad minim</li>
-                                <li>Dolore magna aliqua</li>
-                                <li>Excepteur sint</li>
-                            </ul>
 
                             <form action="" method="GET">
                                 <input type="hidden" id="idProducto" value="<?php echo $data['producto']['id'] ?>">
                                 <div class="row">
-                                    <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item">Size :
-                                                <input type="hidden" name="product-size" id="product-size" value="S">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
-                                        </ul>
-                                    </div>
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item text-right">
@@ -110,7 +75,7 @@
                     <div class="p-2 pb-3">
                         <div class="product-wap card rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['imagen']; ?>">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . $producto['imagen']; ?>">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white btnAddDeseo" href="#" prod="<?php echo $producto['id']; ?>"><i class="far fa-heart"></i></a></li>
@@ -122,7 +87,6 @@
                             <div class="card-body">
                                 <a href="<?php echo BASE_URL . 'principal/detail/' . $producto['id']; ?>" class="h3 text-decoration-none"><?php echo $producto['nombre']; ?></a>
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li>M/L/X/XL</li>
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                         <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
@@ -153,7 +117,7 @@
     <!-- End Article -->
 
 
-    <<?php include_once 'Views/template-principal/footer.php' ?>
+    <<?php include_once 'Views/template/footer-principal.php' ?>
 
     <script src="<?php echo BASE_URL; ?>assets/js/modulos/detail.js"></script>
     <!-- Start Slider Script -->

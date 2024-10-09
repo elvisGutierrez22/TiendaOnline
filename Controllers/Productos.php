@@ -21,8 +21,8 @@ class Productos extends Controller
         for ($i = 0; $i < count($data); $i++) {
              $data[$i]['imagen'] = '<img class="img-thumbnail" src="'.$data[$i]['imagen'] .'" alt="'.$data[$i]['nombre'] .'" width="50">';
             $data[$i]['accion'] = '<div class="d-flex">
-            <button class="btn btn-primary" type="button" onclick="editCat(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button>
-            <button class="btn btn-danger" type="button" onclick="eliminarCat(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></button>
+            <button class="btn btn-primary" type="button" onclick="editPro(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-danger" type="button" onclick="eliminarPro(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></button>
             </div>';
         }
         echo json_encode($data);
@@ -65,12 +65,12 @@ class Productos extends Controller
                         $respuesta = array('msg' => 'Error al registrar el producto', 'icono' => 'warning');
                     }
                 } else {
-                    $data = $this->model->modificarConClave($categoria, $destino, $id);
+                    $data = $this->model->modificarConClave($nombre, $descripcion, $precio, $cantidad, $destino, $categoria);
                     if ($data == 1) {
                           if (!empty($imagen['name'])) {
                                 move_uploaded_file($tmp_name, $destino);
                             }
-                        $respuesta = array('msg' => 'Categoría modificada', 'icono' => 'success');
+                        $respuesta = array('msg' => 'Producto modificado', 'icono' => 'success');
                     } else {
                         $respuesta = array('msg' => 'Error al modificar la categoría', 'icono' => 'warning');
                     }
@@ -82,13 +82,13 @@ class Productos extends Controller
     }
     
 
-
-    public function delete($idCat)
+        //elimnar pro
+    public function delete($idPro)
     {
-        if (is_numeric($idCat)) {
-            $data = $this->model->eliminar($idCat);
+        if (is_numeric($idPro)) {
+            $data = $this->model->eliminar($idPro);
             if ($data == 1) {
-                $respuesta = array('msg' => 'Categoria dado de baja', 'icono' => 'success');
+                $respuesta = array('msg' => 'Producto dado de baja', 'icono' => 'success');
             } else {
                 $respuesta = array('msg' => 'Error al eliminar', 'icono' => 'warning');
             }
@@ -99,15 +99,15 @@ class Productos extends Controller
         echo json_encode($respuesta);
         die();
     }
-    //editar usuario
-    public function edit($idCat)
+    //editar Pro
+    public function edit($idPro)
     {
-        if (is_numeric($idCat)) {
-            $data = $this->model->getCatoria($idCat);
+        if (is_numeric($idPro)) {
+            $data = $this->model->getProducto($idPro);
             if ($data) {
                 echo json_encode($data, JSON_UNESCAPED_UNICODE);
             } else {
-                echo json_encode(['msg' => 'No se encontró la categoría', 'icono' => 'warning']);
+                echo json_encode(['msg' => 'No se encontró el producto', 'icono' => 'warning']);
             }
         } else {
             echo json_encode(['msg' => 'ID no válido', 'icono' => 'warning']);

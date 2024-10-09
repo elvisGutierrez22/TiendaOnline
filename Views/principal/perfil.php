@@ -1,4 +1,4 @@
-<?php include_once 'Views/template-principal/header.php'; ?>
+<?php include_once 'Views/template/header-principal.php'; ?>
 
 <!-- Start Content -->
 <div class="container py-5">
@@ -45,9 +45,7 @@
       <div class="col-md-4">
         <div class="card shadow-lg">
         <div class="text-center">
-  <a href="<?php echo BASE_URL . 'clientes/salir'; ?>" class="btn btn-danger btn-sm d-inline-block">
-    <i class="fas fa-times-circle"></i> Cerrar Sesión
-  </a>
+
 </div>
 
 
@@ -55,8 +53,12 @@
 
 
           <div class="card-body text-center">
-            <img class="img-thumbnail rounded-circle" src="<?php echo BASE_URL . 'assets/img/brand_04.png'; ?>" alt="" width="150">
+            <img class="img-thumbnail rounded-circle" src="<?php echo BASE_URL . 'assets_tmp/img/user.png'; ?>" alt="" width="150">
             <hr>
+            <a href="<?php echo BASE_URL . 'clientes/salir'; ?>" class="btn btn-danger btn-sm d-inline-block">
+    <i class="fas fa-times-circle"></i> Cerrar Sesión
+  </a>
+  <hr>
             <p><?php echo $_SESSION['nombreCliente']; ?></p>
             <p><i class="fas fa-envelope"></i> <?php echo $_SESSION['correoCliente']; ?></p>
 
@@ -179,7 +181,7 @@
 </div>
 
 
-<?php include_once 'Views/template-principal/footer.php'; ?>
+<?php include_once 'Views/template/footer-principal.php'; ?>
 <script src="<?php echo BASE_URL . 'assets/DataTables/datatables.min.js'; ?>"></script>
 <script src="https://cdn.datatables.net/v/dt/dt-2.1.7/datatables.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

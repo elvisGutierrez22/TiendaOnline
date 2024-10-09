@@ -36,7 +36,7 @@
 							<div class="card-body">
 								<div class="p-4">
 									<div class="mb-3 text-center">
-										<img src="<?php echo BASE_URL; ?>assets/images/logo.png" width="60" alt="" />
+										<h1 class="text-success">Tienda Online</h1>
 									</div>
 									<div class="text-center mb-4">
 										<h5 class="">Rocker Admin</h5>
@@ -46,12 +46,12 @@
 										<form class="row g-3" id="formulario">
 											<div class="col-12">
 												<label for="email" class="form-label">Correo Electronico</label>
-												<input type="email" class="form-control" id="email" name="email" value="francis1522v@gmail.com" placeholder="Correo Electronico">
+												<input type="email" class="form-control" id="email" name="email" value="" placeholder="Correo Electronico">
 											</div>
 											<div class="col-12">
 												<label for="clave" class="form-label">Contraseña</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="clave" name="clave" value="admin" placeholder="Contraseña"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+													<input type="password" class="form-control border-end-0" id="clave" name="clave" value="" placeholder="Contraseña"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
 												</div>
 											</div>
 											<div class="col-md-6">

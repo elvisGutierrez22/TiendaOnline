@@ -2,6 +2,8 @@ const tableLista = document.querySelector('#tableListaProductos tbody');
 const tblPendiente = document.querySelector ('#tblPendientes');
 let productosjson = [];
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     if (tableLista) {  
         getListaProductos();
@@ -155,6 +157,8 @@ function registrarPedido(datos){
     }
 }
 
+
+
 function verPedido(idPedido){
     const mPedido = new bootstrap.Modal(document.getElementById('modalPedido'));
     const url = base_url + 'clientes/verPedido/' + idPedido;
@@ -188,4 +192,4 @@ function verPedido(idPedido){
 }
 
 // Revisa que productosjson tenga los datos correctos
-console.log("Productos JSON inicial:", productosjson);  // Para depuración inicial
+console.log("Productos JSON inicial:", productosjson);  // Para depuración inicial

@@ -5,6 +5,10 @@ const frm = document.querySelector('#frmRegistro');
 const btnAccion = document.querySelector('#btnAccion');
 let tblProductos;
 
+
+var firstTabEl = document.querySelector('#myTab li:last-child button')
+var firstTab = new bootstrap.Tab(firstTabEl)
+
 document.addEventListener('DOMContentLoaded', function () {
     tblProductos = $ ('#tblProductos').DataTable({
     ajax: {
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 });
 
-function eliminarCat(idCat) {
+function eliminarPro(idPro) {
     Swal.fire({
         title: "Aviso?",
         text: "¿Estás seguro de eliminar este registro?",
@@ -60,7 +64,7 @@ function eliminarCat(idCat) {
     }).then((result) => {
         if (result.isConfirmed) {
            
-            const url = base_url + "categorias/delete/" + idCat; 
+            const url = base_url + "productos/delete/" + idPro; 
             const http = new XMLHttpRequest();
             http.open('GET', url, true);
             http.send(); 
@@ -68,7 +72,7 @@ function eliminarCat(idCat) {
                 if (this.readyState == 4 && this.status == 200) {
                     const res = JSON.parse(this.responseText);
                     if (res.icono == 'success') {
-                        tblCategorias.ajax.reload(); 
+                        tblProductos.ajax.reload(); 
                         document.querySelector('#id').value = '';
                     }
                     Swal.fire('Aviso', res.msg.toUpperCase(), res.icono);
@@ -78,8 +82,8 @@ function eliminarCat(idCat) {
     });
 }
 
-function editCat(idCat) {
-    const url = base_url + "categorias/edit/" + idCat;
+function editPro(idPro) {
+    const url = base_url + "productos/edit/" + idPro;
     const http = new XMLHttpRequest();
     http.open('GET', url, true);
     http.send();  
@@ -91,11 +95,14 @@ function editCat(idCat) {
                 return; // Si hay un mensaje de error, no continuar
             }
             document.querySelector('#id').value = res.id; // Asegúrate de que la respuesta tenga el id
-            document.querySelector('#categoria').value = res.categoria; // Asegúrate de que la respuesta tenga la categoría
+            document.querySelector('#nombre').value = res.nombre;
+            document.querySelector('#precio').value = res.precio;
+            document.querySelector('#cantidad').value = res.cantidad;
+            document.querySelector('#categoria').value = res.id_categoria; 
+            document.querySelector('#descripcion').value = res.descripcion;// Asegúrate de que la respuesta tenga la categoría
             document.querySelector('#imagen_actual').value = res.imagen; // Asegúrate de que la respuesta tenga la imagen
-            titleModal.textContent = 'EDITAR CATEGORÍA'; // Actualiza el título del modal
             btnAccion.textContent = 'Modificar'; // Cambia el texto del botón
-            myModal.show(); // Muestra el modal
+            firstTab.show();
         }
     };
 }

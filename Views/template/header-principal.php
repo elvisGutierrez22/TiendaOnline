@@ -56,7 +56,7 @@ https://templatemo.com/tm-559-zay-shop
                     <a class="navbar-sm-brand text-light text-decoration-none"
                         href="mailto:info@company.com">info@company.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:23823425"></a>
                 </div>
                 <div>
                     <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
@@ -78,8 +78,8 @@ https://templatemo.com/tm-559-zay-shop
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                Zay
+            <a class="navbar-brand text-success logo h1 align-self-center" href="http://localhost/TiendaOnline/">
+                Tienda Online
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -134,7 +134,7 @@ https://templatemo.com/tm-559-zay-shop
                     <?php if (!empty($_SESSION['correoCliente'])) { ?>
                         <a class="nav-icon position-relative text-decoration-none"
                             href="<?php echo BASE_URL . 'clientes' ?>">
-                            <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets/img/login.png' ?>"
+                            <img class="img-thumbnail" src="<?php echo BASE_URL . 'assets_tmp/img/login.png' ?>"
                                 alt="Logo Cliente" width="50">
                         </a>
                     <?php } else { ?>
