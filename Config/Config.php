@@ -1,8 +1,8 @@
 <?php
 const BASE_URL = "http://localhost/TiendaOnline/";
-const HOST = "localhost";
+const HOST = "34.71.146.244";
 const USER = "root";
-const PASS = "";
+const PASS = "administracion2024";
 const DB = "tienda_online";
 const CHARSET = "charset=utf8";
 const TITLE = "TIENDA ONLINE";
