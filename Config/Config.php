@@ -1,6 +1,6 @@
 <?php
 const BASE_URL = "https://tiendare-448695688435.us-central1.run.app/";
-const HOST = "localhost";
+const HOST = "mysql:unix_socket=/cloudsql/tiendaonline-436721:us-central1:tiendaonline;dbname=tienda_online;charset=utf8";
 const USER = "root";
 const PASS = "administracion2024";
 const DB = "tienda_online";
